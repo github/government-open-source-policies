@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+authors:
+- family-names: "Lostri"
+  given-names: "Eugenia"
+- family-names: "Wood"
+  given-names: "Georgia"
+- family-names: "Jain"
+  given-names: "Megha"
+contact:
+- affilation: "Center for Strategic and International Studies"
+  email: gwood@csis.org
+  family-names: "Wood"
+  given-names: "Georgia"
+title: "Government Open Source Software Policies Dataset"
+version: 8.0.0
+date-released: 2023-01-10
+license: CC-BY-4.0
+url: https://www.csis.org/programs/strategic-technologies-program/government-open-source-software-policies
+type: dataset
+repository: "https://github.com/github/government-open-source-policies"
+keywords: 
+- "open source"
+- "government policies"
+- dataset
+

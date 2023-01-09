@@ -1,0 +1,444 @@
+---
+title: "CSIS Government Open Source Software Policies Dataset"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    include-in-header:
+      - json-ld.html
+---
+
+<!-- 
+MIT License
+
+Copyright GitHub
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+## Dataset
+
+Explore the [raw data](https://github.com/github/government-open-source-policies-test/blob/main/data/OSS.Dataset.-.December.2022.v3.csv).
+
+Run your own analysis by [creating a Codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=579221324) and opening the [Quarto notebook](https://github.com/github/government-open-source-policies-test/blob/main/index.qmd) that powers the charts below.
+
+## Dataset Preview
+
+```{ojs}
+Inputs.table(data)
+```
+
+## Governments
+
+```{ojs}
+governmentHistogram = Plot.plot({
+  marginLeft: 180,
+  y: {
+    insetTop: 5,
+    domain: governmentsByFrequencyDesc,
+  },
+  marks: [
+    Plot.barX(data, Plot.groupY({ x: "count" }, { y: "Government" })),
+  ]
+})
+```
+
+## Regions
+
+```{ojs}
+regionHistogram = Plot.plot({
+  marginLeft: 200,
+  y: {
+    insetTop: 5,
+    domain: regionsByFrequencyDesc,
+  },
+  marks: [
+    Plot.barX(data, Plot.groupY({ x: "count" }, { y: "Region" })),
+  ]
+})
+```
+
+## Issuing Areas
+
+```{ojs}
+issuingAreaHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 90,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Issuing Area of Government",
+    marginRight: 90,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Issuing Areas by Region
+
+```{ojs}
+issuingAreaByRegionHistogram = Plot.plot({
+  marginBottom: 90,
+  marginRight: 200,
+  x: {
+    tickRotate: -45
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Region",
+    marginRight: 200,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Issuing Area of Government" })),
+  ]
+})
+```
+
+## Actions
+
+```{ojs}
+actionHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 150,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Action",
+    marginRight: 150,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Actions by Region
+
+```{ojs}
+actionByRegionHistogram = Plot.plot({
+  marginBottom: 110,
+  marginRight: 200,
+  x: {
+    tickRotate: -45
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Region",
+    marginRight: 200,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Action" })),
+  ]
+})
+```
+
+## Statuses
+
+```{ojs}
+statusHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 90,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Status",
+    marginRight: 90,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Statuses by Region
+
+```{ojs}
+statusByRegionHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 200,
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Region",
+    marginRight: 200,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Status" })),
+  ]
+})
+```
+
+## Types
+
+```{ojs}
+typeHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 150,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Type",
+    marginRight: 150,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Types by Region
+
+```{ojs}
+typeByRegionHistogram = Plot.plot({
+  marginBottom: 110,
+  marginRight: 200,
+  x: {
+    tickRotate: -45
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Region",
+    marginRight: 200,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Type" })),
+  ]
+})
+```
+
+## Stated Objective: Modernization
+
+```{ojs}
+modernizationHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 90,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Stated Objective: Modernization",
+    marginRight: 90,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Stated Objective: Cost
+
+```{ojs}
+costHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 90,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Stated Objective: Cost",
+    marginRight: 90,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Stated Objective: Sovereignty
+
+```{ojs}
+sovereigntyHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 90,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Stated Objective: Sovereignty",
+    marginRight: 90,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Stated Objective: Support for National Industry
+
+```{ojs}
+nationalIndustryHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 90,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Stated Objective: Support for National Industry",
+    marginRight: 90,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Stated Objective: Transparency
+
+```{ojs}
+transparencyHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 90,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Stated Objective: Transparency",
+    marginRight: 90,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Stated Objective: Security
+
+```{ojs}
+securityHistogram = Plot.plot({
+  marginBottom: 50,
+  marginRight: 90,
+  x: {
+    tickRotate: -45,
+    tickFormat: "d",
+  },
+  y: {
+    insetTop: 5,
+  },
+  facet: {
+    data,
+    y: "Stated Objective: Security",
+    marginRight: 90,
+  },
+  marks: [
+    Plot.frame(),
+    Plot.barY(data, Plot.groupX({ y: "count" }, { x: "Date" })),
+  ]
+})
+```
+
+## Appendix
+
+```{ojs}
+data = await FileAttachment("./data/OSS.Dataset.-.December.2022.v3.csv").csv({ typed: true })
+```
+
+```{ojs}
+governmentsByFrequencyDesc = d3.rollups(data, v => v.length, d => d['Government'])
+  .sort(([, a], [, b]) => d3.descending(a, b))
+  .map(([key]) => key)
+```
+
+```{ojs}
+governmentsByFrequencyDesc
+```
+
+```{ojs}
+regionsByFrequencyDesc = d3.rollups(data, v => v.length, d => d.Region)
+  .sort(([, a], [, b]) => d3.descending(a, b))
+  .map(([key]) => key)
+```
+
+```{ojs}
+regionsByFrequencyDesc
+```
