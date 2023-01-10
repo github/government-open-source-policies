@@ -17,7 +17,7 @@ research took place between January - August 2022; however, we have included som
 documented policies and bills that have been introduced since then.
 
 This dataset builds on previous CSIS surveys on OSS policies (the 2010 update can be accessed
-here). However, given the developments in the last decade, we found it necessary to adapt the
+[here](https://www.csis.org/analysis/government-open-source-policies-0)). However, given the developments in the last decade, we found it necessary to adapt the
 dataset to better fit the type of policies we found in this iteration. For starters, and as a matter of
 scope, this dataset focuses on those initiatives introduced at the national level. In past iterations
 we included local and regional initiatives, since a lot of the drive for OSS was occurring at those
