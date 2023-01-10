@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -202,7 +203,7 @@ SOFTWARE.
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
 <p>Explore the <a href="https://github.com/github/government-open-source-policies-test/blob/main/data/OSS.Dataset.-.December.2022.v3.csv">raw data</a>.</p>
-<p>Run your own analysis by <a href="https://github.com/codespaces/new?hide_repo_select=true&amp;ref=main&amp;repo=579221324">creating a Codespace</a> and opening the <a href="https://github.com/github/government-open-source-policies-test/blob/main/index.qmd">Quarto notebook</a> that powers the charts below.</p>
+<p>Run your own analysis by <a href="https://github.com/codespaces/new?hide_repo_select=true&amp;ref=main&amp;repo=github/government-open-source-policies">creating a Codespace</a> and opening the <a href="https://github.com/github/government-open-source-policies/blob/main/index.qmd">Quarto notebook</a> that powers the charts below.</p>
 </section>
 <section id="dataset-preview" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-preview">Dataset Preview</h2>
@@ -839,7 +840,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -926,24 +944,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -985,7 +1021,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>Explore the <span class="co">[</span><span class="ot">raw data</span><span class="co">](https://github.com/github/government-open-source-policies-test/blob/main/data/OSS.Dataset.-.December.2022.v3.csv)</span>.</span>
 <span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>Run your own analysis by <span class="co">[</span><span class="ot">creating a Codespace</span><span class="co">](https://github.com/codespaces/new?hide_repo_select=true&amp;ref=main&amp;repo=579221324)</span> and opening the <span class="co">[</span><span class="ot">Quarto notebook</span><span class="co">](https://github.com/github/government-open-source-policies-test/blob/main/index.qmd)</span> that powers the charts below.</span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>Run your own analysis by <span class="co">[</span><span class="ot">creating a Codespace</span><span class="co">](https://github.com/codespaces/new?hide_repo_select=true&amp;ref=main&amp;repo=github/government-open-source-policies)</span> and opening the <span class="co">[</span><span class="ot">Quarto notebook</span><span class="co">](https://github.com/github/government-open-source-policies/blob/main/index.qmd)</span> that powers the charts below.</span>
 <span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset Preview</span></span>
 <span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a></span>
