@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "CSIS Government Open Source Software Policies Dataset",
     "section": "",
-    "text": "Explore the raw data.\nRun your own analysis by creating a Codespace and opening the Quarto notebook that powers the charts below."
+    "text": "Explore the raw data.\nRun your own analysis by creating a Codespace and opening the Quarto notebook that powers the charts below.\n\n\n\nCreate a Codespace\nWithin the Codespace, navigate to the file you’re reading right now (index.qmd)\nPress Cmd+Shift+K or Ctrl+Shift+K to render the notebook.\n\nOrdinarily, you’d need to install Quarto first, but the prebuild configuration for this repo’s Codespaces uses an image with Quarto pre-installed for you.\nRead more about Quarto and writing Observable JS (ojs) cells."
   },
   {
     "objectID": "index.html#dataset-preview",
