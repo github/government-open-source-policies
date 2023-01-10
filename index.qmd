@@ -38,6 +38,16 @@ Explore the [raw data](https://github.com/github/government-open-source-policies
 
 Run your own analysis by [creating a Codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=579221324) and opening the [Quarto notebook](https://github.com/github/government-open-source-policies-test/blob/main/index.qmd) that powers the charts below.
 
+### Using Quarto in Codespaces
+
+1. [Create a Codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=github/government-open-source-policies)
+2. Within the Codespace, navigate to the file you're reading right now ([`index.qmd`](/index.qmd))
+3. Press `Cmd+Shift+K` or `Ctrl+Shift+K` to render the notebook.
+
+Ordinarily, you'd need to install Quarto first, but the [prebuild configuration](.devcontainer/devcontainer.json) for this repo's Codespaces uses an image with Quarto pre-installed for you.
+
+Read more about [Quarto](https://quarto.org/docs/get-started/hello/vscode.html) and writing [Observable JS (`ojs`) cells](https://quarto.org/docs/interactive/ojs/).
+
 ## Dataset Preview
 
 ```{ojs}
