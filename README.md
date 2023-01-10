@@ -5,7 +5,7 @@ with open source software (OSS).
 
 This dataset was prepared by Eugenia Lostri, Georgia Wood, and Megha Jain from the Center for Strategic and International Studies (CSIS).
 
-You can explore summary visualizations of the dataset [here](https://effective-waddle-0b24ecaa.pages.github.io/) or perform your own analyses by creating a [Codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=github/government-open-source-policies). The raw dataset is available [here](https://github.com/github/government-open-source-policies/blob/main/data/OSS.Dataset.-.December.2022.v3.csv). The dataset can also be accessed on the [CSIS website](https://www.csis.org/programs/strategic-technologies-program/government-open-source-software-policies).
+You can explore summary visualizations of the dataset [here](https://github.github.io/government-open-source-policies/) or perform your own analyses by creating a [Codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=github/government-open-source-policies). The raw dataset is available [here](https://github.com/github/government-open-source-policies/blob/main/data/OSS.Dataset.-.December.2022.v3.csv). The dataset can also be accessed on the [CSIS website](https://www.csis.org/programs/strategic-technologies-program/government-open-source-software-policies).
 
 Comments, corrections and new data are welcome. Please review our [Contribution page](./CONTRIBUTING.md).
 
