@@ -5,7 +5,7 @@ with open source software (OSS).
 
 This dataset was prepared by Eugenia Lostri, Georgia Wood, and Megha Jain from the Center for Strategic and International Studies (CSIS). 
 
-You can explore summary visualizations of the dataset [here](https://reimagined-fortnight-b321a25c.pages.github.io/) or perform your own analyses by creating a [Codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=579221324). The raw dataset is available [here](https://github.com/github/government-open-source-policies-test/blob/main/data/OSS.Dataset.-.December.2022.v3.csv). The dataset can also be accessed on the [CSIS website](#holder).
+You can explore summary visualizations of the dataset [here](https://reimagined-fortnight-b321a25c.pages.github.io/) or perform your own analyses by creating a [Codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=579221324). The raw dataset is available [here](https://github.com/github/government-open-source-policies/blob/main/data/OSS.Dataset.-.December.2022.v3.csv). The dataset can also be accessed on the [CSIS website](#holder).
 
 Comments, corrections and new data are welcome. Please review our [Contribution page](./CONTRIBUTING.md).
 
