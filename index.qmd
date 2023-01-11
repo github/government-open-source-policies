@@ -34,7 +34,7 @@ SOFTWARE.
 
 ## Dataset
 
-Explore the [raw data](https://github.com/github/government-open-source-policies-test/blob/main/data/OSS.Dataset.-.December.2022.v3.csv).
+Explore the [raw data](https://github.com/github/government-open-source-policies/blob/main/data/OSS.Dataset.-.December.2022.v3.csv).
 
 Run your own analysis by [creating a Codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=github/government-open-source-policies) and opening the [Quarto notebook](https://github.com/github/government-open-source-policies/blob/main/index.qmd) that powers the charts below.
 

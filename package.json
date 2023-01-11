@@ -1,5 +1,5 @@
 {
-  "name": "government-open-source-policies-test",
+  "name": "government-open-source-policies",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github/government-open-source-policies-test.git"
+    "url": "git+https://github.com/github/government-open-source-policies.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/github/government-open-source-policies-test/issues"
+    "url": "https://github.com/github/government-open-source-policies/issues"
   },
-  "homepage": "https://github.com/github/government-open-source-policies-test#readme",
+  "homepage": "https://github.com/github/government-open-source-policies#readme",
   "dependencies": {
     "datapackage": "^1.1.10"
   }
