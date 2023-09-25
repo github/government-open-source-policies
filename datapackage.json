@@ -1,120 +1,97 @@
 {
-    "profile": "tabular-data-package",
-    "resources": [
-        {
-            "path": "data/OSS.Dataset.-.December.2022.v3.csv",
-            "profile": "tabular-data-resource",
-            "encoding": "utf-8",
-            "name": "OSS.Dataset.-.December.2022.v3",
-            "format": "csv",
-            "mediatype": "text/csv",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "Country",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Region",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Issuing Area of Government",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Title",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Type",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Date",
-                        "type": "year",
-                        "format": "default"
-                    },
-                    {
-                        "name": "OSS Specific?",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Stated Objective: Cost",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Stated Objective: Sovereignty",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Stated Objective: Support for National Industry",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Stated Objective: Modernization",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Stated Objective: Transparency",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Stated Objective: Security",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Action",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Term",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Status",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Comments",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Source",
-                        "type": "string",
-                        "format": "uri"
-                    },
-                    {
-                        "name": "Source II",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "Notes",
-                        "type": "string",
-                        "format": "default"
-                    }
-                ],
-                "missingValues": [
-                    ""
-                ]
-            }
-        }
-    ]
+  "resources": [
+    {
+      "name": "oss.dataset.-.december.2022.v3",
+      "type": "table",
+      "path": "data/OSS.Dataset.-.December.2022.v3.csv",
+      "scheme": "file",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "Government",
+            "type": "string"
+          },
+          {
+            "name": "Region",
+            "type": "string"
+          },
+          {
+            "name": "Issuing Area of Government",
+            "type": "string"
+          },
+          {
+            "name": "Title",
+            "type": "string"
+          },
+          {
+            "name": "Type",
+            "type": "string"
+          },
+          {
+            "name": "Date",
+            "type": "integer"
+          },
+          {
+            "name": "OSS Specific?",
+            "type": "string"
+          },
+          {
+            "name": "Stated Objective: Cost",
+            "type": "string"
+          },
+          {
+            "name": "Stated Objective: Sovereignty",
+            "type": "string"
+          },
+          {
+            "name": "Stated Objective: Support for National Industry",
+            "type": "string"
+          },
+          {
+            "name": "Stated Objective: Modernization",
+            "type": "string"
+          },
+          {
+            "name": "Stated Objective: Transparency",
+            "type": "string"
+          },
+          {
+            "name": "Stated Objective: Security",
+            "type": "string"
+          },
+          {
+            "name": "Action",
+            "type": "string"
+          },
+          {
+            "name": "Term",
+            "type": "string"
+          },
+          {
+            "name": "Status",
+            "type": "string"
+          },
+          {
+            "name": "Comments",
+            "type": "string"
+          },
+          {
+            "name": "Source",
+            "type": "string"
+          },
+          {
+            "name": "Source II",
+            "type": "string"
+          },
+          {
+            "name": "Notes",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
 }
