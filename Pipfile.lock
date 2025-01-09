@@ -199,7 +199,7 @@
             ],
             "index": "pypi",
             "markers": "python_version >= '3.7'",
-            "version": "==3.1.4"
+            "version": ">=3.1.5"
         },
         "jsonschema": {
             "hashes": [
